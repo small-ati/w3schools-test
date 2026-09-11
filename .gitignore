@@ -1,0 +1,8 @@
+msedgedriver.exe
+chromedriver.exe
+__pycache__/
+*.pyc
+.pytest_cache/
+screenshots/
+*.csv
+w3schools_test.py
