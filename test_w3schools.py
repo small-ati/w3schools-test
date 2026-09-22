@@ -81,3 +81,11 @@ def test_search_box_exists(driver,base_url):
     wait = WebDriverWait(driver,10)
     search_box = wait.until(EC.presence_of_element_located((By.ID,'search2')))
     assert search_box is not None,'搜索框不存在'
+    search_box.clear()
+    search_box.send_keys('python')
+    search_btn = wait.until(EC.element_to_be_clickable((By.ID,'search-btn')))
+    search_btn.click()
+    WebDriverWait(driver,10).until(EC.title_contains("搜索结果")
+                                   )
+    assert '搜索结果' in driver.title,f'标题不符:{driver.title}'
+    
